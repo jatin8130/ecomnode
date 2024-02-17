@@ -12,7 +12,7 @@ const jwtkey = 'ecom';
 const PORT = process.env.URL || 5000;
 
 app.get('/', async (req, res) => {
-    jwt.sign({}, jwtkey, {expiresIn: '2h'}, (err, token)=>{
+    jwt.sign({}, jwtkey, (err, token)=>{
         if(err) throw res.send({status: false});
         res.send({auth: token, status: true});
     })
