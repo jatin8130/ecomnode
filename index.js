@@ -3,8 +3,14 @@ const cors = require('cors')
 require('dotenv').config();
 
 const app = express()
-app.use(cors())
 app.use(express.json())
+app.use(cors(
+    {
+        origin: ["https://ecom-com.vercel.app"],
+        methods: ["POST", "GET", "PUT", "DELETE", "PATCH"],
+        credentials: true
+    }
+));
 
 const Port = process.env.PORT || 8080;
 
