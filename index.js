@@ -6,7 +6,10 @@ const app = express()
 app.use(express.json())
 app.use(cors(
     {
-        origin: ["https://ecom-com.vercel.app"],
+        origin: [
+            "http://localhost:5173", // vite
+            "https://ecom-com.vercel.app"
+        ],
         methods: ["POST", "GET", "PUT", "DELETE", "PATCH"],
         credentials: true
     }
@@ -19,3 +22,4 @@ app.listen(Port, () => {
 })
 
 app.use('/', require('./handler/handle'))
+
