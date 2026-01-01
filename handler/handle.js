@@ -2,7 +2,7 @@ const express = require('express')
 
 const router = express.Router();
 
-router.route('/users').get(require('../controller/controller').userAdmin).post(require('../controller/controller').Post);
+router.route('/users').get(require('../controller/controller').userAdmin).post(require('../controller/controller').emailPost);
 router.route('/users/:id').post(require('../controller/controller').emailOne).put(require('../controller/controller').Put).delete(require('../controller/controller').Delete);
 
 router.route('/users/email/:id').get(require('../controller/controller').getOne).patch(require('../controller/controller').Patch);
@@ -22,3 +22,4 @@ router.route('/carts').post(require('../controller/controller').Post);
 
 
 module.exports = router;
+
